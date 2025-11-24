@@ -2,29 +2,33 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Client {
-
-    private int id;
     private String nom;
-    private List<Commande> commandes;
+    private List<Command> commands;
 
-    public Client(int id, String nom) {
-        this.id = id;
+    public Client(String nom) {
         this.nom = nom;
-        this.commandes = new ArrayList<>();
+        this.commands = new ArrayList<>();
     }
 
-    public void passComande(Commande commande) {
-        commandes.add(commande);
-        System.out.print("commande pass par " + nom);
+    public void  passCommande(Command c) {
+        if(!commands.contains(c)) {
+            commands.add(c);
+            System.out.println("comand pass par " + nom);
+        }
+
+    }
+
+    public List<Command> getHistoriqueCommandes() {
+        return new ArrayList<>(commands);
+    }
+
+    public String getNom() {
+        return nom;
     }
 
 
     @Override
     public String toString() {
-        return "Client{" +
-                "id=" + id +
-                ", nom='" + nom + '\'' +
-                ", commandes=" + commandes +
-                '}';
+        return  "- Client nom='" + nom ;
     }
 }

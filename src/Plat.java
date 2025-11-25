@@ -2,20 +2,20 @@ public class Plat {
 
         private String nom;
         private double prix;
-        private String typeSprcial;
+        private String typeSpecial;
         private boolean isSpecial;
 
         public Plat(String nom, double prix) {
             this.nom = nom;
             this.prix = prix;
-            this.typeSprcial = "";
+            this.typeSpecial = "";
             this.isSpecial = false;
         }
 
-        public Plat(String nom, double prix, String typeSprcial) {
+        public Plat(String nom, double prix, String typeSpecial) {
             this.nom = nom;
             this.prix = prix;
-            this.typeSprcial = typeSprcial;
+            this.typeSpecial = typeSpecial;
             this.isSpecial = true;
         }
 
@@ -27,8 +27,8 @@ public class Plat {
             return nom;
         }
 
-        public String getTypeSprcial() {
-            return typeSprcial;
+        public String getTypeSpecial() {
+            return typeSpecial;
         }
 
         public boolean isSpecial() {
@@ -39,7 +39,7 @@ public class Plat {
         @Override
         public String toString() {
             if(isSpecial) {
-                return nom + " (" + typeSprcial + ") - " + prix + " MAD";
+                return nom + " (" + typeSpecial + ") - " + prix + " MAD";
             }
             return nom + " - " + prix + " MAD";
         }

@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Restaurand {
 
@@ -37,12 +38,20 @@ public class Restaurand {
     }
 
 
-    public void afficherMenu() {
+    public Plat afficherMenu() {
+        Scanner input = new Scanner(System.in);
         System.out.println("=== Menu du Restaurand ===");
         for (Plat p : plats) {
             System.out.println(p.toString());
         }
         System.out.println("==========================");
-
+        System.out.print(" Entre nom de plat: ");
+        String chois = input.nextLine();
+        for(Plat p : plats) {
+            if(p.getNom().contains(chois)) {
+                return p;
+            }
+        }
+        return null;
     }
 }

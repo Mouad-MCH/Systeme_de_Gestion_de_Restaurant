@@ -32,6 +32,11 @@ public class Restaurand {
         }
     }
 
+    public void affichehistorique(){
+        System.out.println("affiche tous les commandes: ");
+        for(Command c : commands)
+            c.toString();
+    }
 
     public List<Plat> getMenu() {
         return new ArrayList<>(plats);
@@ -53,5 +58,14 @@ public class Restaurand {
             }
         }
         return null;
+    }
+
+    public void afficherMenu(int i) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("=== Menu du Restaurand ===");
+        for (Plat p : plats) {
+            System.out.println(p.toString());
+        }
+        System.out.println("==========================");
     }
 }
